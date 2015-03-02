@@ -99,7 +99,12 @@ header .active {
 
 }
 
+/* INDEX */
 
+#index {
+    width: 960px;
+    margin: auto auto;
+}
 
 
 /*PAGE 1*/
