@@ -1,0 +1,835 @@
+#preloader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 58px;
+    height: 58px;
+    background-size: 58px 58px;
+    margin-top: -29px;
+    margin-left: -29px;
+    z-index:-1;
+    
+    background-image: url("../images/preloader.svg");
+}
+
+/*     Internet Explorer ≥ 10*/
+_:-ms-input-placeholder, :root #preloader {
+    background-image: url("../images/preloader.gif");
+}
+
+/*Everything but Internet Explorer ≤9*/
+html[lang='\en'] #preloader {
+    background-image: url("../images/preloader.gif");
+}
+
+
+#preloader::after {
+    position: absolute;
+    margin-top: 58px;
+    content: "loading";
+    margin-left: 3px;
+}
+
+/* MENU */
+#bgmenu{
+    position: fixed;
+    top:0px;
+    width: 100%;
+    height: 56px;
+    background: black;
+    z-index: 2;
+}
+
+#menu {
+    /*  LET OP*/
+    max-width: 960px;
+    margin: 0px auto 0px auto;
+    height: inherit;
+    position: relative;
+    background: inherit;
+    
+
+}
+
+#menu ul{
+    float: right;
+}
+#menu .logo{
+    position: absolute;
+    left: 0px;
+}   
+
+#menu li{
+    float: left;
+    height: 56px;
+}
+#menu .logo a {
+    background: inherit;
+    margin-left: 0px;
+    background: inherit;
+
+    background-image: url("../images/logo.svg");
+    background-size: cover;
+    background-position: 0px -7px;
+    width: 123px;
+    padding: 0px;
+    text-indent: -990px;
+    height: 100%;
+    }
+
+#menu .logo a:hover {
+    background-image: url("../images/logo.svg");
+    background-position: 0px -7px;
+    background-size: cover;
+    width: 123px;
+    height: 100%;
+    }
+
+#menu li a {
+    height: inherit;
+    padding: 18.6px 11px 0px 11px;
+
+    display: block;
+    
+    color: white;
+    
+    text-decoration: none;
+    font-size: 14px;
+    transition: background .5s ease-in-out;
+}
+#menu li a:hover{
+    background: #302D2B;
+    transition: background .5s ease-in-out;
+    }
+
+#menu .active a{
+    background-color: red;
+    background: #302D2B;
+
+    }
+
+@media (max-width: 400px) {
+    #menu .logo a {
+        display: none;
+    }
+}
+
+
+/* FONT FACE */
+@font-face {
+  	font-family: 'Arimo';
+  	font-style: normal;
+  	font-weight: 400;
+	src: url(fonts/normal.woff) format("woff"),
+     url(fonts/normal.ttf) format("truetype");
+	}
+
+
+/* typografie */
+html,
+body {
+	font-family: 'Arimo', 'Helvetica Neue', 'HelveticaNeue', 
+	  Helvetica, Arial, 'Lucida Grande', sans-serif;
+    -webkit-print-color-adjust:exact;
+}
+
+
+
+button,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  font-family: 'Arimo', "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.1;
+  color: inherit;
+}
+
+h1{
+    font-size: 25pt;
+}
+h2{
+    font-size: 20px;
+    line-height: 1.4;
+
+}
+@media (max-width: 500px) {
+    h1{
+        font-size: 36px;
+    }/*e/h1*/
+    
+    h2{
+        font-size: 16px;
+    }/*e/h1*/
+
+}/*e/mq*/
+
+.txt p {
+    line-height: 1.4;
+}
+.txt ol{
+    list-style-type: decimal;
+    list-style-position: outside;
+    margin-left: 15px;
+    line-height: 1.4;
+}
+
+.txt ul{
+    list-style-type: disc;
+    list-style-position: outside;
+    margin-left: 15px;
+    line-height: 1.4;
+
+}
+
+a{
+color: black;
+}
+a:hover{
+color: #302D2B;
+}
+
+
+.portfolio .header .backlink,
+.txt .button,
+.button,
+button {
+    background-color: black;
+    display: inline-block;
+    border: 0px;
+    color: white;
+    font-size: 15px;
+    font-weight: normal;
+    margin: 5px 5px 5px 0px;
+    padding: 5px;
+    border-radius: 3px;
+    text-decoration: none;
+    transition: background-color .5s ease-in-out;
+    cursor: pointer;
+    background-position: center left;
+    background-repeat:no-repeat; 
+
+}/*e/button*/
+
+.portfolio .header .backlink {
+    margin: 0px;
+    background-image: url("../images/fa-caret-left.svg");
+    background-size: 15px 15px;
+    padding-left: 20px;
+}
+
+.txt .button:hover,
+.button:hover,
+.portfolio .header .backlink:hover {
+    background-color: #302D2B;
+    color: white;
+}
+
+/* Filter */
+
+#filter {
+margin-top: 100px;
+}
+
+#filter h2 {
+    margin-top: 15px;
+    font-size: 20px;
+}
+
+#filter article ul {
+    margin-top: 5px;
+
+    margin-left: -25px;
+    width: 100%;
+    height: 40px;
+}
+
+@media (max-width: 960px) {
+    #filter article ul {
+        height: 70px;
+    }
+}
+
+@media (max-width: 650px) {
+    #filter article ul {
+        height: 80px;
+    }
+}
+@media (max-width: 400px) {
+    #filter article ul {
+        height: 150px;
+    }
+}
+
+#filter article ul li .noactive,
+#filter article ul li .active {
+    color: black;
+    margin-left: 20px;
+    margin-bottom: 15px;
+
+    padding-left: 25px;
+    background-image: url("../images/radio.checked.svg");
+    background-size: 15px 15px;
+    background-repeat: no-repeat;
+    background-position: 5px center;
+}
+#filter article ul li .noactive {
+
+    background-image: url("../images/radio.unchecked.svg");
+
+}
+
+
+#filter article ul li a:before {
+    content: "#";
+}
+#filter article ul li a{
+float: left;
+}
+
+
+
+.errorheader,
+.header {
+    display: block;
+    background: url("../images/9577883936.jpg");
+    height: 700px;
+    height: 84vh;
+    width: 100%;
+    background-size:cover;
+    background-position: center;
+    margin-top: 55px;
+    margin-bottom: 55px;
+
+
+	} /* e/header */
+
+.yt {
+    height: 700px;
+    height: 84vh;
+    width: 100%;
+}
+
+.contact .header,
+.over .header,
+.home .header:first-child{
+    height: 500px;
+    height: 73vh;
+}
+
+.errorheader{
+    height: 100vh;
+    margin:0px; 
+}
+
+article,
+.txt,
+.header article{
+    display: block;
+    width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (max-width: 999px) {
+    article,
+    .txt,
+    .header article{
+        width: 90%; /* fallback if needed */
+        width: calc(100% - 21px);
+        padding-left: 10px;
+        padding-right: 10px;
+
+    }
+}
+
+
+
+
+.cv {
+  background-size:contain;
+  background-color: #e3e3e2;
+  background-repeat: no-repeat;
+  
+}
+
+.portfolio .header .backlink {
+    position: absolute;
+    top: 70px;
+
+}
+
+.header h1{
+    padding-top: 48px;
+
+}
+
+
+.white,
+.white a,
+.portfolio .header h1{
+    color: white;
+    text-shadow: black 0px 0px 5px;
+}
+
+/*.portfolio .header .backlink == button*/
+
+
+.txt {
+    /*max-height: 42vh;*/
+    margin: 50px auto 50px auto;
+    margin: 5.5vh auto 5.5vh auto;
+}
+.quarter {
+    margin: 25px auto 25px auto;
+    margin: 2.75vh auto 2.75vh auto;
+}
+
+
+/*
+@media (min-width: 960px) {
+    .header article,
+    .gs {
+        display: block;
+        width: 960px;
+        margin-left: auto;
+        margin-right: auto;
+    } 
+    
+}
+
+.header article h1 {
+    padding-top: 70px;
+}
+.header article h2 {
+    width: 100%;
+    padding-top: 20px;
+    
+}    
+
+@media (min-width: 960px) {
+    .header article h2 {
+        width: 66%;
+    } 
+
+}
+
+.header article .next {
+    display:block;
+    width: 100px;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+}    */
+
+
+.header ul {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    padding-left: 0;
+}
+.header li {
+    display:inline;
+    font-size: 20px;
+    vertical-align: middle;
+}
+
+
+#weathericon {
+    background-image: url("../images/weather/undefined.svg");
+    width: 40px;
+    height: 40px;
+    background-size: 40px 40px;
+    display:inline-block;
+    }
+    
+
+  
+
+
+
+
+
+	
+
+
+#content{
+    /*position: relative;*/
+    /*margin-top: 55px;*/
+}
+
+
+#content .backgroundimage{
+    width: 100%;
+    height: 36.5vh;
+    height: 375px;
+    background-size: cover;
+    background-position: center;
+    margin: 0px;
+    display: block;
+    transition: width 1.5s;
+}
+
+
+#content .four .backgroundimage,
+#content .two .backgroundimage {
+    float: right;
+}
+
+#content .one,
+#content .thumbnail:nth-child(4n+1) {
+    width: 30%;
+    width: calc(33.33% - 15px);
+    margin: 10px 10px 10px 0px;
+    float: left;
+}
+
+#content .two,
+#content .thumbnail:nth-child(4n+2) {
+    width: 60%;
+    width: calc(66.66% - 10px);
+    margin: 10px 0px 10px 10px;
+    float: left;
+    /*1*/
+}
+
+#content .three,
+#content .thumbnail:nth-child(4n+3) {
+    width: 60%;
+    width: calc(66.66% - 10px);
+    margin: 10px 10px 10px 0px;
+
+    /*2*/
+    float: left;
+}
+
+#content .four,
+#content .thumbnail:nth-child(4n+0) {
+    width: 33%;
+    width: calc(33.33% - 15px);
+    margin: 10px 0px 10px 10px;
+
+    float: left;
+    /*3*/
+}
+
+#content .one,
+#content .two,
+#content .three,
+#content .four,
+#content .thumbnail {
+    position: relative;
+
+    /*border: 1px solid;*/
+}
+
+
+#content .label {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    padding: 5px 5px 10px 10px;
+}
+
+
+#content .nothumbnail .backgroundimage {
+    transition: width 1.5s;
+    transition: height 1.5s;
+    height: 0px;
+    width: 0px;
+}
+
+#content .nothumbnail .label {
+    display: none;
+}
+
+.header .tags a,
+.label .tags a{
+    color: black;
+    text-decoration: none;
+    text-shadow: white 0px 0px 5px;
+    font-size: 15px;
+
+}
+.tags a:hover{
+    text-decoration: underline;
+
+}
+#content .tags a:before,
+.portfolio .header .tags a:before {
+    content: "#";
+}
+
+.portfolio .header .tags a {
+    top:50px;
+}
+
+#content .label h2 a{
+    font-size: 20px;
+    text-decoration: none;
+    color: white;
+    /*Sorry IE9 your text is not readable*/
+    text-shadow: black 0px 0px 5px;    
+}
+#content .label h2 a:hover{
+    text-decoration: underline;
+}
+
+
+
+@media (max-width: 650px) {
+    #content .one,
+    #content .two,
+    #content .three,
+    #content .four,
+    #content .thumbnail {
+        width: 100%;
+        float: none;
+/*        position: relative;
+*/        margin: 0px;
+        margin-top:20px;
+    }
+    #content .label {
+        position: absolute;
+        bottom: 15px;
+        left: 15px;
+    }
+}
+
+
+.clear {
+    clear:both;
+    margin-bottom: 55px;
+}
+
+
+/* Footer */
+@media screen and (min-width: 240px) and (max-width: 320px) {
+    footer{
+        background-image: url("../images/footer/footer_n.jpg");
+    }
+}
+@media screen and (min-width: 320px) and (max-width: 500px) {
+    footer{
+        background-image: url("../images/footer/footer.jpg");
+    }
+}
+@media screen and (min-width: 500px) and (max-width: 640px) {
+    footer{
+        background-image: url("../images/footer/footer_z.jpg");
+    }
+}
+@media screen and (min-width: 640px) and (max-width: 800px) {
+    footer{
+        background-image: url("../images/footer/footer_c.jpg");
+    }
+}
+@media screen and (min-width: 800px) and (max-width: 1024px) {
+    footer{
+        background-image: url("../images/footer/footer_b.jpg");
+    }
+}
+@media screen and (min-width: 1024px) and (max-width: 1600px) {
+    footer{
+        background-image: url("../images/footer/footer_h.jpg");
+    }
+}
+@media screen and (min-width: 1600px) {
+    footer{
+        background-image: url("../images/footer/footer_k.jpg");
+    }
+}
+
+
+footer{
+    width: 100%;
+    height: 375px;
+    height: 36.5vh;
+
+    background-color: black;
+    background-size: cover;
+    color: white;
+}
+
+footer .links {
+    width: 66%;
+    height: 175px;
+    padding-top: 25px;
+}
+footer .contact h3,
+footer .links h3{
+    font-size: 20px;
+    color: white;
+    margin-bottom: 10px;
+}
+footer li,
+footer a{
+    font-size: 15px;
+    line-height: 1.7;
+    color: white;
+    transition: opacity .5s ease-in-out;
+}
+footer a:hover {
+    color: white;
+    opacity: 0.8;
+}
+footer li {
+    line-height: 1.2;
+
+}
+footer .links .Navigatie{
+    float: left;
+    margin-left: 25px;
+    width: 40%;
+    width: calc(50% - 25px);
+}
+footer .links .Blog{
+    float: right;
+    width: 50%;
+
+}
+footer .contact {
+    padding-top: 25px;
+    width: 33%;
+    height: 175px;
+    float: right;
+}
+
+footer #copyright {
+    width: 100%;
+    margin-top: 40px;
+    text-align: center;
+}
+
+.social li{
+    float: left;
+    margin-left: 20px;
+    margin-top: 25px;
+}
+.social li:first-child{
+    margin-left: 0px;
+}
+
+.social li .envelope,
+.social li .facebook,
+.social li .twitter,
+.social li .git, 
+.social li .behance{
+    transition: opacity .5s ease-in-out;
+    width: 44px;
+    height: 44px;
+    display: block;
+    text-indent: -9999px;
+    background-size: cover;
+}
+
+.social li .envelope {
+    background-image: url("../images/fa-envelope.svg");
+}
+.social li .facebook {
+    background-image: url("../images/fa-facebook.svg");
+}
+.social li .twitter {
+    background-image: url("../images/fa-twitter.svg");
+}
+.social li .git{
+    background-image: url("../images/fa-git.svg");
+}
+.social li .behance{
+    background-image: url("../images/fa-behance.svg");
+}
+
+.social li a:hover{
+    opacity: 0.5;
+}
+
+@media screen and (max-height: 700px) {
+     footer{
+        height: 275px;
+    }
+}   
+
+
+@media screen and (min-width: 700px) and (max-width: 900px) {
+    footer{
+        height: 275px;
+    }
+
+    .social li{
+        margin-top: 10px;
+    }
+    .social li:nth-child(3n+1) {
+        clear: both;
+        margin-left: 0px;
+    }
+}
+
+@media screen and (min-width: 480px) and (max-width: 700px) {
+    footer {
+        height: 400px;
+    }
+
+    .social li{
+        margin-top: 10px;
+        margin-left: 20px;
+    }
+    .social li:nth-child(2n+1) {
+        clear: both;
+        margin-left: 0px;
+    }
+    footer li {
+        margin-top: 10px;
+    }
+    footer li a{
+        line-height: 1;
+    }
+    footer .links {
+        height: 275px;
+    }
+
+}
+@media screen and (min-width: 280px) and (max-width: 480px) {
+    footer{
+        height: 600px;
+    }
+    footer {
+        margin-left: 0px;
+    }
+
+    footer .contact{
+        margin-left:10px;
+        float: none;
+        width: 95%;
+    }
+    footer .links {
+        float: none;
+        height: 275px;
+        width: 100%;
+    }
+    footer .links .Navigatie,
+    footer .links .Blog{
+        margin-left:0px;
+        width: 45%;
+    }
+    footer .links .Navigatie{
+        margin-left:10px;
+    }
+
+    footer li {
+        margin-top: 10px;
+    }
+    footer li a{
+        line-height: 1;
+    }
+}
+
