@@ -363,11 +363,45 @@ function leftInSlideUsingMargin (object) {
 
 function diffSlider (object) {
 	if (object.className != "nothumbnail") {
-		console.dir(object)
+		// console.dir(object)
 	}
-	if (object.className === "one") {
-		// object.style.left = "0px";
-	}//e/one
+	if (object.className === "one" || object.className === "three" ) {
+
+
+		if (object.style.left == "") {
+		var tempInnerWidth = window.innerWidth;
+		object.style.left = -tempInnerWidth + "px";
+		};
+
+		var calc = object.style.left.split("px");
+		var calc = Number(calc[0]) + 10;
+		console.log(calc);
+
+		if (calc != 0) {
+			if (calc < -300) {
+				var calc = calc+300;
+				console.log(object.style.left);
+
+			};
+
+			object.style.left =  calc + "px";
+	
+
+
+		};
+
+
+	}//e/one++ three
+
+	// if (object.className === "two" || object.className === "four" ) {
+
+
+	// }
+
+			requestAnimationFrame(function(z) {
+		         diffSlider(object);
+		    });
+
 
 }//e/diffSlider
 
