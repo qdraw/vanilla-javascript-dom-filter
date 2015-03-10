@@ -358,52 +358,105 @@ function leftInSlideUsingMargin (object) {
 
 
 
-
-
-
 function diffSlider (object) {
-	if (object.className != "nothumbnail") {
-		// console.dir(object)
+	console.log(object);
+
+	if ((object.className === "one")||(object.className === "three")) {
+		
 	}
-	if (object.className === "one" || object.className === "three" ) {
 
 
-		if (object.style.left == "") {
-		var tempInnerWidth = window.innerWidth;
-		object.style.left = -tempInnerWidth + "px";
-		};
+}//e/dif
 
-		var calc = object.style.left.split("px");
-		var calc = Number(calc[0]) + 10;
-		console.log(calc);
 
-		if (calc != 0) {
-			if (calc < -300) {
-				var calc = calc+300;
-				console.log(object.style.left);
+function mover () {
 
-			};
+}//e/mover
 
-			object.style.left =  calc + "px";
+// function diffSlider (object) {
+// 	if (object.className != "nothumbnail") {
+// 		// console.dir(object)
+// 	}
+// 	if (object.className === "one" || object.className === "three" ) {
+
+
+
+// 		var one = document.querySelectorAll(".one");
+// 		for (var i = 0; i < one.length; i++) {
+// 			console.log(one[i].style.left);
+// 		};
+
+
+// 		if (object.style.left == "") {
+// 		var tempInnerWidth = window.innerWidth;
+// 		object.style.left = -tempInnerWidth + "px";
+// 		};
+
+// 		var calc = object.style.left.split("px");
+// 		var calc = Number(calc[0]) + 10;
+// 		// console.log(calc);
+
+// 		if (calc != 0) {
+// 			if (calc < -300) {
+// 				var calc = calc+300;
+// 				// console.log(object.style.left);
+
+// 			};
+
+// 			object.style.left =  calc + "px";
 	
 
 
-		};
+// 		};///e/calc
 
 
-	}//e/one++ three
-
-	// if (object.className === "two" || object.className === "four" ) {
+// 	}//e/one++ three
 
 
-	// }
+// 	// console.log(object);
 
-			requestAnimationFrame(function(z) {
-		         diffSlider(object);
-		    });
+// 	var calc = object.style.left.split("px");
+// 	var calc = Number(calc[0]);
+// 	// console.log(calc);
 
 
-}//e/diffSlider
+// 	if ((calc < 300)&&(calc > 0)) {
+
+// 		if (object.className === "two" || object.className === "four" ) {
+
+// 			if (object.style.left == "") {
+// 			var tempInnerWidth = window.innerWidth;
+// 			object.style.left = tempInnerWidth + "px";
+// 			};
+
+// 			var calc = calc - 10;
+// 			// console.log(calc);
+
+// 			if (calc != 0) {
+				
+// 				if ((calc < 300)&&(calc > 0)) {
+// 					var calc = calc-300;
+// 					// console.log(object.style.left);
+
+// 				};
+
+// 				object.style.left =  calc + "px";
+				
+
+
+
+// 			};///e/calc
+
+// 		}//e/2+4
+// 	}//e/
+
+
+// 			requestAnimationFrame(function(z) {
+// 		         diffSlider(object);
+// 		    });
+
+
+// }//e/diffSlider
 
 
 
