@@ -145,6 +145,16 @@ function filterSelect(filtername) {
 		        if ((datatag.indexOf(filtername) > -1) || (filtername == "all")) {
 
 
+				
+
+					// var urlWithoutHash = document.location.href.replace(location.hash , "" );
+
+					console.log(location.hash);
+					var url = "#" + filtername;
+					var obj = { Page: "page", Url:  url};
+					history.pushState(obj, obj.Page, obj.Url);
+
+
 		        	thumbnail.className = "thumbnail";
       	
 
@@ -204,6 +214,7 @@ function filterSelect(filtername) {
 
 				toggle[i].className = "noactive";
 				console.log("all");
+
 				filterSelect("all");
 			}
 			else {
@@ -256,6 +267,33 @@ function filterSelect(filtername) {
 					leftInSlideUsingMarginProxy(object);
 			};
 		}///e/fi	
+
+		if (document.querySelectorAll("#page3").length >= 1) {
+
+			var thumbnail = document.getElementById("content");
+			console.log(thumbnail.children.length);
+
+
+			for (var i = 0; i < thumbnail.children.length; i++) {
+					var object = thumbnail.children[i];
+					object.style.transform = "scale(1)";
+			};
+
+		    
+		}
+
+		if (document.querySelectorAll("#page4").length >= 1) {
+			var thumbnail = document.getElementById("content");
+			console.log(thumbnail.children.length);
+
+
+			for (var i = 0; i < thumbnail.children.length; i++) {
+					var object = thumbnail.children[i];
+					diffSlider(object);
+			};
+
+
+		} //e/pg3
 
 
 
@@ -313,10 +351,113 @@ function leftInSlideUsingMargin (object) {
 	    });
 
 
-	}
+	}///e/counter
 
 
 }//e/leftInSlideProxy
+
+
+
+function diffSlider (object) {
+	console.log(object);
+
+	if ((object.className === "one")||(object.className === "three")) {
+		
+	}
+
+
+}//e/dif
+
+
+function mover () {
+
+}//e/mover
+
+// function diffSlider (object) {
+// 	if (object.className != "nothumbnail") {
+// 		// console.dir(object)
+// 	}
+// 	if (object.className === "one" || object.className === "three" ) {
+
+
+
+// 		var one = document.querySelectorAll(".one");
+// 		for (var i = 0; i < one.length; i++) {
+// 			console.log(one[i].style.left);
+// 		};
+
+
+// 		if (object.style.left == "") {
+// 		var tempInnerWidth = window.innerWidth;
+// 		object.style.left = -tempInnerWidth + "px";
+// 		};
+
+// 		var calc = object.style.left.split("px");
+// 		var calc = Number(calc[0]) + 10;
+// 		// console.log(calc);
+
+// 		if (calc != 0) {
+// 			if (calc < -300) {
+// 				var calc = calc+300;
+// 				// console.log(object.style.left);
+
+// 			};
+
+// 			object.style.left =  calc + "px";
+	
+
+
+// 		};///e/calc
+
+
+// 	}//e/one++ three
+
+
+// 	// console.log(object);
+
+// 	var calc = object.style.left.split("px");
+// 	var calc = Number(calc[0]);
+// 	// console.log(calc);
+
+
+// 	if ((calc < 300)&&(calc > 0)) {
+
+// 		if (object.className === "two" || object.className === "four" ) {
+
+// 			if (object.style.left == "") {
+// 			var tempInnerWidth = window.innerWidth;
+// 			object.style.left = tempInnerWidth + "px";
+// 			};
+
+// 			var calc = calc - 10;
+// 			// console.log(calc);
+
+// 			if (calc != 0) {
+				
+// 				if ((calc < 300)&&(calc > 0)) {
+// 					var calc = calc-300;
+// 					// console.log(object.style.left);
+
+// 				};
+
+// 				object.style.left =  calc + "px";
+				
+
+
+
+// 			};///e/calc
+
+// 		}//e/2+4
+// 	}//e/
+
+
+// 			requestAnimationFrame(function(z) {
+// 		         diffSlider(object);
+// 		    });
+
+
+// }//e/diffSlider
+
 
 
 
@@ -332,16 +473,19 @@ function leftInSlideUsingMargin (object) {
 
 	var w = document.querySelectorAll(".tags a");
 	for (var i = w.length - 1; i >= 0; i--) {
-		console.log(w[i]);
-		w[i].addEventListener("click", localLink, false);
+		// console.log(w[i]);
+		// w[i].addEventListener("click", localLink, false);
+		w[i].addEventListener("click", function(e){ var those = this; localLink(e,those) }, false);
 	};
 
-function localLink () {
-	var tag = this.href.substring(this.href.indexOf("#")+1,this.href.length);
+function localLink (e,those) {
+    e.preventDefault();
+
+	var tag = those.href.substring(those.href.indexOf("#")+1,those.href.length);
 	var hash = window.location.hash.replace("#","");
 
 
-	if (!(tag == hash && this.parentNode.nodeName =="DIV") ) {
+	if (!(tag == hash && those.parentNode.nodeName =="DIV") ) {
 		if (document.querySelectorAll("#preloader").length >= 1) {
 			document.getElementById("preloader").style.display = "block";
 		}///e/fi
@@ -377,7 +521,7 @@ function loadImageFromImagesFolder () {
 			var dataname = thumbnail.firstElementChild.getAttribute('data-name');
 
 			thumbnail.firstElementChild.style.backgroundImage = "url('images/"+ dataname +".png')"
-			console.log(dataname);
+			// console.log(dataname);
 
 		};//e/fi
 

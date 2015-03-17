@@ -62,7 +62,6 @@ h1{
 h2{
     font-size: 20px;
     line-height: 1.4;
-
 }
 
 
@@ -434,6 +433,389 @@ header .active {
 #page2 #content .label h2 a:hover{
     text-decoration: underline;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*PAGE 3*/
+
+#page3 #preloader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 58px;
+    height: 58px;
+    background-size: 58px 58px;
+    margin-top: -29px;
+    margin-left: -29px;
+    z-index:2;
+    background-image: url("../images/preloader.svg");
+}
+
+#page3 #preloader::after {
+    position: absolute;
+    margin-top: 58px;
+    content: "loading";
+    margin-left: 3px;
+}
+
+#page3 #content .nothumbnail {
+    width: 0px;
+    height: 0px;
+}
+
+#page3 #content .nothumbnail .label {
+    display: none;
+}
+
+#page3 {
+    width: 960px;
+    margin: auto auto;
+}
+#page3 #filter {
+    width: 200px;
+    float: left;
+    background: #dedede;
+}
+
+#page3 #filter {
+    width: 140px;
+    height: 300px;
+    float: left;
+    background: #dedede;
+    padding: 10px;
+    margin: 10px 0px 0px 20px;
+}
+
+
+#page3 #filter article ul li .noactive,
+#page3 #filter article ul li .active {
+    color: black;
+    margin-left: -4px;
+    margin-bottom: 15px;
+
+    padding-left: 25px;
+    background-image: url("../images/radio.checked.svg");
+    background-size: 15px 15px;
+    background-repeat: no-repeat;
+    background-position: 5px center;
+}
+#page3 #filter article ul li .noactive {
+
+    background-image: url("../images/radio.unchecked.svg");
+
+}
+
+#page3 #filter .active {
+    color: red;
+}
+
+#page3 #content {
+    width: 760px;
+    float: right;
+}
+
+
+
+#page3 .backgroudimage {
+    background-size: contain;
+    background-color: #dedede;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: inherit;
+
+}
+
+#page3 #content .backgroudimage {
+    display: block;
+
+}
+
+
+#page3 #content .one,
+#page3 #content .thumbnail:nth-child(4n+1) {
+    width: 30%;
+    width: calc(33.33% - 15px);
+    margin: 10px 10px 10px 0px;
+    float: left;
+}
+
+#page3 #content .two,
+#page3 #content .thumbnail:nth-child(4n+2) {
+    width: 60%;
+    width: calc(66.66% - 10px);
+    margin: 10px 0px 10px 10px;
+    float: left;
+}
+
+#page3 #content .three,
+#page3 #content .thumbnail:nth-child(4n+3) {
+    width: 60%;
+    width: calc(66.66% - 10px);
+    margin: 10px 10px 10px 0px;
+    float: left;
+}
+
+#page3 #content .four,
+#page3 #content .thumbnail:nth-child(4n+0) {
+    width: 33%;
+    width: calc(33.33% - 15px);
+    margin: 10px 0px 10px 10px;
+    float: left;
+}
+
+#page3 #content .one,
+#page3 #content .two,
+#page3 #content .three,
+#page3 #content .four,
+#page3 #content .thumbnail {
+    position: relative;
+    height: 300px;
+    transition: 0.5s ease-in-out;
+    transform: scale(1.3);
+  }
+#page3 #content .nothumbnail {
+    transition: 0.5s ease-in-out;
+}
+
+#page3 #content .label {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    padding: 5px 5px 10px 10px;
+}
+
+#page3 #content .label h2 a{
+    font-size: 20px;
+    text-decoration: none;
+    color: white;
+    /*Sorry IE9 your text is not readable*/
+    text-shadow: black 0px 0px 5px;    
+}
+#page3 #content .label h2 a:hover{
+    text-decoration: underline;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*PAGE 4*/
+
+#page4 #preloader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 58px;
+    height: 58px;
+    background-size: 58px 58px;
+    margin-top: -29px;
+    margin-left: -29px;
+    z-index:2;
+    background-image: url("../images/preloader.svg");
+}
+
+#page4 #preloader::after {
+    position: absolute;
+    margin-top: 58px;
+    content: "loading";
+    margin-left: 3px;
+}
+
+#page4 #content .nothumbnail {
+
+    margin-top:15px;
+    width: 0px;
+    height: 0px;
+}
+
+#page4 #content .nothumbnail .label {
+    display: none;
+}
+
+#page4 {
+    width: 960px;
+    margin: auto auto;
+}
+#page4 #filter {
+    width: 200px;
+    float: left;
+    background: #dedede;
+}
+
+#page4 #filter {
+    width: 140px;
+    height: 300px;
+    float: left;
+    background: #dedede;
+    padding: 10px;
+    margin: 10px 0px 0px 20px;
+}
+
+
+#page4 #filter article ul li .noactive,
+#page4 #filter article ul li .active {
+    color: black;
+    margin-left: -4px;
+    margin-bottom: 15px;
+
+    padding-left: 25px;
+    background-image: url("../images/radio.checked.svg");
+    background-size: 15px 15px;
+    background-repeat: no-repeat;
+    background-position: 5px center;
+}
+#page4 #filter article ul li .noactive {
+
+    background-image: url("../images/radio.unchecked.svg");
+
+}
+
+
+
+#page4 #content {
+    width: 760px;
+    float: right;
+}
+
+
+
+#page4 .backgroudimage {
+    background-size: contain;
+    background-color: #dedede;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: inherit;
+
+}
+
+#page4 #content .backgroudimage {
+    display: block;
+
+}
+
+
+#page4 #content .one,
+#page4 #content .thumbnail:nth-child(4n+1) {
+    width: 30%;
+    width: calc(33.33% - 15px);
+    margin: 10px 10px 10px 0px;
+    float: left;
+}
+
+#page4 #content .two,
+#page4 #content .thumbnail:nth-child(4n+2) {
+    width: 60%;
+    width: calc(66.66% - 10px);
+    margin: 10px 0px 10px 10px;
+    float: left;
+}
+
+#page4 #content .three,
+#page4 #content .thumbnail:nth-child(4n+3) {
+    width: 60%;
+    width: calc(66.66% - 10px);
+    margin: 10px 10px 10px 0px;
+    float: left;
+}
+
+#page4 #content .four,
+#page4 #content .thumbnail:nth-child(4n+0) {
+    width: 33%;
+    width: calc(33.33% - 15px);
+    margin: 10px 0px 10px 10px;
+    float: left;
+}
+
+#page4 #content .one,
+#page4 #content .two,
+#page4 #content .three,
+#page4 #content .four,
+#page4 #content .thumbnail {
+    position: relative;
+    height: 300px;
+    transition: 0.5s ease-in-out;
+  }
+
+#page3 #content .nothumbnail {
+    transition: 0.5s ease-in-out;
+}
+
+
+#page4 #content .label {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    padding: 5px 5px 10px 10px;
+}
+
+#page4 #content .label h2 a{
+    font-size: 20px;
+    text-decoration: none;
+    color: white;
+    /*Sorry IE9 your text is not readable*/
+    text-shadow: black 0px 0px 5px;    
+}
+#page4 #content .label h2 a:hover{
+    text-decoration: underline;
+}
+
+
+
+
+
 
 
 
