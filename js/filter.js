@@ -201,7 +201,7 @@ function filterSelect(filtername) {
 
 
 	if (document.querySelectorAll("#content .nothumbnail").length == document.getElementById("content").children.length) {
-		console.log("damm");
+		console.log("damm, you almost got me!");
 		for (var i = 0; i < document.getElementById("content").children.length; i++) {
 			document.getElementById("content").children[i].className = "thumbnail"
 		};
