@@ -298,6 +298,8 @@ function filterSelect(filtername) {
 			for (var i = 0; i < thumbnail.children.length; i++) {
 					var object = thumbnail.children[i];
 					object.style.transform = "scale(1)";
+					object.style.webkitTransform = "scale(1)";
+
 			};
 
 		    
