@@ -786,11 +786,11 @@ header .active {
 #page4 #content .thumbnail {
     position: relative;
     height: 300px;
-    transition: 0.5s ease-in-out;
+    /*transition: 0.5s ease-in-out;*/
   }
 
-#page3 #content .nothumbnail {
-    transition: 0.5s ease-in-out;
+#page4 #content .nothumbnail {
+    /*transition: 0.5s ease-in-out;*/
 }
 
 

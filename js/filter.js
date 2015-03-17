@@ -175,12 +175,17 @@ function filterSelect(filtername) {
 					};
 					q++;
 
-
+					if (document.querySelectorAll("#page4").length >= 1) {
+						sliderFour(thumbnail);
+					} //e/page4
 						
 
 		        }//fi
 		        else {
 		        	thumbnail.className = "nothumbnail";
+					if (document.querySelectorAll("#page4").length >= 1) {
+						sliderFour(thumbnail);
+					} //e/page4
 		        }
 
 
@@ -209,25 +214,41 @@ function filterSelect(filtername) {
 
 	for (var i = 0; i < toggle.length; i++) {
 		if (document.querySelectorAll("#filter article ul li a")[i].href.indexOf(filtername) >= 0) {
-			console.log(toggle[i].href);
+			// console.log(toggle[i].href);
 			if (toggle[i].className === "active") {
 
 				toggle[i].className = "noactive";
 				console.log("all");
 
 				filterSelect("all");
+
+				// if (document.querySelectorAll("#page4").length >= 1) {
+				// 	var thumbnail = document.getElementById("content");
+				// 	for (var q = 0; q < thumbnail.length; q++) {
+				// 		sliderFour(thumbnail[q]);
+				// 	};
+				// } //e/page4
+
 			}
 			else {
 				toggle[i].className = "active";
 				if (filtername=="") { // is new state aka filtername==all
-
 					toggle[i].className = "noactive";
 				};
+
+			// if (document.querySelectorAll("#page4").length >= 1) {
+			// 	var thumbnail = document.getElementById("content");
+			// 	for (var q = 0; q < thumbnail.length; q++) {
+			// 		sliderFour(thumbnail[q]);
+			// 	};
+			// } //e/page4
+			
 
 			} 
 		}//e/fi
 		else {
 			toggle[i].className = "noactive";
+
 		}///else
 
 	};
@@ -254,7 +275,7 @@ function filterSelect(filtername) {
 		 	document.getElementById("preloader").style.display = "none";
 
 
-		 }, 1000);
+		 }, 500);
 
 
 		if (document.querySelectorAll("#page2").length >= 1) {
@@ -284,16 +305,16 @@ function filterSelect(filtername) {
 
 		if (document.querySelectorAll("#page4").length >= 1) {
 			var thumbnail = document.getElementById("content");
-			console.log(thumbnail.children.length);
-
 
 			for (var i = 0; i < thumbnail.children.length; i++) {
 					var object = thumbnail.children[i];
-					diffSlider(object);
+
+					if (document.querySelectorAll("#page4").length >= 1) {
+						sliderFour(object);
+					} //e/page4
+
 			};
-
-
-		} //e/pg3
+		} //e/page4
 
 
 
@@ -358,105 +379,8 @@ function leftInSlideUsingMargin (object) {
 
 
 
-function diffSlider (object) {
-	console.log(object);
-
-	if ((object.className === "one")||(object.className === "three")) {
-		
-	}
 
 
-}//e/dif
-
-
-function mover () {
-
-}//e/mover
-
-// function diffSlider (object) {
-// 	if (object.className != "nothumbnail") {
-// 		// console.dir(object)
-// 	}
-// 	if (object.className === "one" || object.className === "three" ) {
-
-
-
-// 		var one = document.querySelectorAll(".one");
-// 		for (var i = 0; i < one.length; i++) {
-// 			console.log(one[i].style.left);
-// 		};
-
-
-// 		if (object.style.left == "") {
-// 		var tempInnerWidth = window.innerWidth;
-// 		object.style.left = -tempInnerWidth + "px";
-// 		};
-
-// 		var calc = object.style.left.split("px");
-// 		var calc = Number(calc[0]) + 10;
-// 		// console.log(calc);
-
-// 		if (calc != 0) {
-// 			if (calc < -300) {
-// 				var calc = calc+300;
-// 				// console.log(object.style.left);
-
-// 			};
-
-// 			object.style.left =  calc + "px";
-	
-
-
-// 		};///e/calc
-
-
-// 	}//e/one++ three
-
-
-// 	// console.log(object);
-
-// 	var calc = object.style.left.split("px");
-// 	var calc = Number(calc[0]);
-// 	// console.log(calc);
-
-
-// 	if ((calc < 300)&&(calc > 0)) {
-
-// 		if (object.className === "two" || object.className === "four" ) {
-
-// 			if (object.style.left == "") {
-// 			var tempInnerWidth = window.innerWidth;
-// 			object.style.left = tempInnerWidth + "px";
-// 			};
-
-// 			var calc = calc - 10;
-// 			// console.log(calc);
-
-// 			if (calc != 0) {
-				
-// 				if ((calc < 300)&&(calc > 0)) {
-// 					var calc = calc-300;
-// 					// console.log(object.style.left);
-
-// 				};
-
-// 				object.style.left =  calc + "px";
-				
-
-
-
-// 			};///e/calc
-
-// 		}//e/2+4
-// 	}//e/
-
-
-// 			requestAnimationFrame(function(z) {
-// 		         diffSlider(object);
-// 		    });
-
-
-// }//e/diffSlider
 
 
 
@@ -619,6 +543,80 @@ function loadImageFromImagesFolder () {
 
 
 // }///e/function anchorLink
+
+
+
+
+var isReady = false;
+function sliderFour (object) {
+	// console.log(object);
+
+
+	if ((object.className === "one" && object.style.left === "" ) || (object.className === "three" && object.style.left === "" )) {
+		object.style.left = "-800px";
+	}//e//one
+
+	if ((object.className === "one" && object.style.left === "0px" && isReady === false) || (object.className === "three" && object.style.left === "0px" && isReady === false )) {
+		object.style.left = "-800px";
+	}//e//one
+
+	if (object.className === "one" || object.className === "three") {
+		var go = object.style.left.split("px");
+		var go = Number(go[0]);
+		if (go === 0) {
+			var	isReady = false;
+		}
+		else {
+			var	isReady = true;
+			if (go < -300) {
+				var go = go + 100;
+			} else{
+				var go = go + 20;
+			}
+		}
+		
+		object.style.left  = go + "px";
+
+		// console.log(object.style.left);
+	}
+
+	if ((object.className === "two" && object.style.left === "" ) || (object.className === "four" && object.style.left === "" )) {
+		object.style.left = "500px";
+	}//e//one
+
+	if ((object.className === "two" && object.style.left === "0px" && isReady === false) || (object.className === "four" && object.style.left === "0px" && isReady === false )) {
+		object.style.left = "500px";
+	}//e//one
+
+	if (object.className === "two" || object.className === "four") {
+		var go = object.style.left.split("px");
+		var go = Number(go[0]);
+		console.log(go);
+		if (go === 0) {
+			var	isReady = false;
+		}
+		else {
+			var	isReady = true;
+			if (go > 540) {
+				var go = go - 100;
+			} else{
+				var go = go - 20;
+			}
+		}
+		
+		object.style.left  = go + "px";
+
+		console.log(object.style.left);
+	}
+
+
+	if (isReady) {
+		requestAnimationFrame(function(z) {
+	        sliderFour(object);
+	    });
+    };
+
+}
 
 
 
